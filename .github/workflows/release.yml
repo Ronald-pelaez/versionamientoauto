@@ -20,7 +20,7 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 21
       - run: npm ci
       - run: npm run build
       - name: Get Release Token
