@@ -2,7 +2,7 @@
 
 
 echo "hola rr";
-echo "";
+echo "Vamos a realizar un cambio de codigo completo";
 
 
 ?>
