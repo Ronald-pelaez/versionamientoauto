@@ -1,28 +1,27 @@
-
-name: Release
+name: Prueba Devops
 
 on:
   push:
-    branches:
-      - main
+    branches: main
+  workflow_dispatch:
 
 jobs:
-  release:
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          persist-credentials: false
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 21
-      - run: npm ci
-      - run: npm run build
-      - run: npx semantic-release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Checkout código
+      uses: actions/checkout@v3
+
+    - name: Instalar Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+          
+    - name: Instalar dependencias
+      run: npm install
+
+    - name: Simular despliegue
+      run: 
+        echo "Hola mundo"
+    
